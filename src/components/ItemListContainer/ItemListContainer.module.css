@@ -1,0 +1,158 @@
+.filterBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  background-color: rgba(10, 15, 24, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 114, 206, 0.15);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  align-items: center;
+  justify-content: flex-start;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.selectWrapper {
+  position: relative;
+  min-width: 180px;
+}
+
+.filterSelect {
+  width: 100%;
+  padding: 10px 16px;
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  transition: border-color 0.2s ease;
+}
+
+.filterSelect:focus {
+  border-color: var(--blue-playstation);
+  box-shadow: 0 0 10px rgba(0, 114, 206, 0.3);
+}
+
+.selectWrapper::after {
+  content: "▼";
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  position: absolute;
+  right: 4px;
+
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.filterBtn {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filterBtn:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: var(--text-muted);
+}
+
+.favFilter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Espacio exacto entre la estrella y la palabra */
+}
+
+.favFilter.active {
+  background-color: rgba(245, 158, 11, 0.15) !important;
+  border-color: #f59e0b !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.25);
+}
+
+.filterStarIcon {
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.searchActiveContainer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.backFilterBtn {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: rgba(255, 255, 255, 0.03);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.backFilterBtn:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+  border-color: var(--text-muted);
+}
+
+.searchWrapper {
+  position: relative;
+  flex: 1;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 10px 40px 10px 16px;
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.searchInput:focus {
+  border-color: #0072ce;
+  box-shadow: 0 0 10px rgba(0, 114, 206, 0.3);
+}
+
+.clearSearchBtn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.clearSearchBtn:hover {
+  color: #ef4444;
+}

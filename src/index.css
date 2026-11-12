@@ -1,0 +1,28 @@
+:root {
+  --bg-main: #0a0f18;
+  --bg-surface: #121926;
+  --blue-playstation: #0072ce;
+  --blue-hover: #00439c;
+  --text-primary: #ffffff;
+  --text-muted: #94a3b8;
+  --border-color: #1e293b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+

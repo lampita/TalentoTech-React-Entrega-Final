@@ -1,0 +1,83 @@
+.footer {
+  background-color: rgba(10, 15, 24, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  padding: 30px 20px;
+  width: 100%;
+  border-top: 1px solid rgba(0, 114, 206, 0.2);
+  box-shadow: 0 -4px 30px rgba(0, 114, 206, 0.15);
+}
+
+.footerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copyrightSection {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.text {
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+
+.brand {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.logoAccent {
+  color: var(--blue-playstation);
+  text-shadow: 0 0 10px rgba(0, 114, 206, 0.4);
+}
+
+.subtext {
+  color: var(--text-muted, #8a99a8);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.8rem;
+}
+
+.navSection {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button:hover {
+  color: var(--blue-playstation);
+  background-color: rgba(0, 114, 206, 0.12);
+}
+
+.buttonActive {
+  color: var(--blue-playstation);
+  font-weight: 600;
+  background-color: rgba(0, 114, 206, 0.2);
+}
+
+.modalWrapper {
+  position: absolute;
+  bottom: 50px;
+  right: 0;
+  z-index: 10;
+}
