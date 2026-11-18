@@ -9,7 +9,7 @@ const imgPrecarga = new Image();
 export const Layout = () => {
   useEffect(() => {
     imgPrecarga.src = marioImg;
-    // Fuerza la decodificación de los píxeles antes de que el usuario abra el carrito
+
     imgPrecarga.decode().catch(() => {});
   }, []);
   return (

@@ -1,5 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../firestore/config";
 import { IconoEstrellaRellena } from "../components/Icons/IconoEstrellaRellena"; 
 import { Spinner } from "../components/Spinner/Spinner";
 import styles from "./DetalleProducto.module.css";
@@ -12,32 +14,33 @@ export const DetalleProducto = () => {
   const [cargando, setCargando] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const obtenerProductoDetalle = async () => {
-      try {
-        const respuesta = await fetch("/data/productos.json");
+useEffect(() => {
+  const obtenerProductoDetalle = async () => {
+    setCargando(true);
+    setError(null);
 
-        if (!respuesta.ok) {
-          throw new Error("No se pudo conectar con la base de datos");
-        }
+    try {
+      const productoId = doc(db, "productos", id);
+      const query = await getDoc(productoId);
 
-        const datos = await respuesta.json();
-        const juegoEncontrado = datos.find((juego) => juego.id === Number(id));
-
-        if (!juegoEncontrado) {
-          throw new Error("El juego solicitado no existe en nuestro catálogo");
-        }
-
-        setProducto(juegoEncontrado);
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setCargando(false);
+      if (!query.exists()) {
+        throw new Error("El juego solicitado no existe en nuestro catálogo");
       }
-    };
+      setProducto({
+        ...query.data(),
+        id: query.id,
+      });
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setCargando(false);
+    }
+  };
 
+  if (id) {
     obtenerProductoDetalle();
-  }, [id]);
+  }
+}, [id]);
 
   if (cargando) return <Spinner />;
   if (error) return <p className={styles.errorText}>Error: {error}</p>;
@@ -64,7 +67,7 @@ export const DetalleProducto = () => {
           <span className={styles.starsLabel}>({producto.stars} / 5)</span>
         </div>
 
-        {/* Agregada la descripción del producto */}
+
         <p className={styles.gameDescription}>{producto.descripcion}</p>
       </div>
 

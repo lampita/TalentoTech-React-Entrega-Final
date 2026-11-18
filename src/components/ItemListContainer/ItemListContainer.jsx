@@ -24,23 +24,32 @@ export function ItemListContainer({ Mensaje }) {
 
   const { favoritos } = useCart();
 
-  useEffect(() => {
-    const obtenerProductos = async () => {
-      try {
-        const respuesta = await fetch("/data/productos.json");
-        if (!respuesta.ok) {
-          throw new Error("No se pudo cargar la información de los productos");
-        }
-        const datos = await respuesta.json();
-        setProductos(datos);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setCargando(false);
+useEffect(() => {
+  const obtenerProductos = async () => {
+    try {
+      const productosDB = collection(db, "productos");
+      const query = await getDocs(productosDB);
+
+      if (query.empty) {
+        throw new Error("No se encontraron productos en la base de datos");
       }
-    };
-    obtenerProductos();
-  }, []);
+
+      const listaProductos = query.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+
+      setProductos(listaProductos);
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setCargando(false);
+    }
+  };
+
+  obtenerProductos();
+}, []);
+
 
   if (cargando) return <Spinner />;
   if (error) return <p>Error: {error}</p>;
