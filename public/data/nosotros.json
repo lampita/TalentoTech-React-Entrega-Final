@@ -2,28 +2,28 @@
   {
     "id": 1,
     "nombre": "Jose Lamparelli",
-    "foto": "/images/nosotros/Jose_80.jpg",
+    "foto": "https://i.ibb.co/bMc3mmpN/Jose-80.jpg",
     "cargo": "CEO",
     "mail": "jlamparelli@ps4store.com"
   },
   {
     "id": 2,
     "nombre": "Juan Navarro",
-    "foto": "/images/nosotros/Juan_80.jpg",
+    "foto": "https://i.ibb.co/chjvf2gB/Juan-80.jpg",
     "cargo": "Soporte Técnico",
     "mail": "jnavarro@ps4store.com"
   },
   {
     "id": 3,
     "nombre": "Gabriela Rodriguez",
-    "foto": "/images/nosotros/Gabriela_80.jpg",
+    "foto": "https://i.ibb.co/DDgvZ0bp/Gabriela-80.jpg",
     "cargo": "Atención al Público",
     "mail": "grodriguez@ps4store.com"
   },
   {
     "id": 4,
     "nombre": "Pedro Sosa",
-    "foto": "/images/nosotros/Pedro_80.jpg",
+    "foto": "https://i.ibb.co/PZRNdyRR/Pedro-80.jpg",
     "cargo": "Atención al Público",
     "mail": "psosa@ps4store.com"
   }

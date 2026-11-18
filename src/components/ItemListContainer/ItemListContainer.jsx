@@ -4,8 +4,10 @@ import { useState, useEffect } from "react";
 import { useCart } from "../../context/CartContext";
 import { IconoEstrellaVacia } from "../Icons/IconoEstrellaVacia";
 import { IconoEstrellaRellena } from "../Icons/IconoEstrellaRellena";
-
 import styles from "./ItemListContainer.module.css";
+
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../firestore/config";
 
 export function ItemListContainer({ Mensaje }) {
   const [productos, setProductos] = useState([]);

@@ -2,7 +2,7 @@
   {
     "id": 1,
     "stars": 5,
-    "image": "/images/cards/Xbox-Series-5-2.png",
+    "image": "https://i.ibb.co/cSFBvqrV/Xbox-Series-5-2.png",
     "title": "EA SPORTS FC 24 PS4",
     "price": 24400,
     "status": "masVendido",
@@ -13,7 +13,7 @@
   {
     "id": 2,
     "stars": 4,
-    "image": "/images/cards/Nba2k24.png",
+    "image": "https://i.ibb.co/Cp24Ssp4/Nba2k24.png",
     "title": "NBA 2K24 PS4",
     "price": 38500,
     "status": "preventa",
@@ -24,7 +24,7 @@
   {
     "id": 3,
     "stars": 5,
-    "image": "/images/cards/Call-Of-Duty-Modern-Warfare-2.jpg",
+    "image": "https://i.ibb.co/9HqQv3MD/Call-Of-Duty-Modern-Warfare-2.jpg",
     "title": "CALL OF DUTY MODERN WARFARE II PS4",
     "price": 32700,
     "status": "masVendido",
@@ -35,7 +35,7 @@
   {
     "id": 4,
     "stars": 3,
-    "image": "/images/cards/Dead-Island.png",
+    "image": "https://i.ibb.co/q38qRSjM/Dead-Island.png",
     "title": "Dead Island II PS4",
     "price": 43900,
     "status": "preventa",
@@ -46,7 +46,7 @@
   {
     "id": 5,
     "stars": 3,
-    "image": "/images/cards/Resident-Evil-4-Remake.jpg",
+    "image": "https://i.ibb.co/dJ0jvxcf/Resident-Evil-4-Remake.jpg",
     "title": "Resident Evil 4 Remake PS4",
     "price": 25400,
     "status": "preventa",
@@ -57,7 +57,7 @@
   {
     "id": 6,
     "stars": 4,
-    "image": "/images/cards/Wwe-2k23-Ps4-Digital.jpg",
+    "image": "https://i.ibb.co/H8YC8Zf/Wwe-2k23-Ps4-Digital.jpg",
     "title": "WWE 2K23",
     "price": 21200,
     "status": "masVendido",
@@ -68,7 +68,7 @@
   {
     "id": 7,
     "stars": 2,
-    "image": "/images/cards/God-Of-War-Ragnarok.jpg",
+    "image": "https://i.ibb.co/v4Z6Cdw7/God-Of-War-Ragnarok.jpg",
     "title": "God of War Ragnarok",
     "price": 24400,
     "status": "masVendido",
@@ -79,7 +79,7 @@
   {
     "id": 8,
     "stars": 5,
-    "image": "/images/cards/Fifa-23.jpg",
+    "image": "https://i.ibb.co/ZRkcLPt5/Fifa-23.jpg",
     "title": "Fifa 23 Español Latino PS4",
     "price": 21200,
     "status": "preventa",
@@ -90,7 +90,7 @@
   {
     "id": 9,
     "stars": 4,
-    "image": "/images/cards/Nba-2k23.jpg",
+    "image": "https://i.ibb.co/RGy66LMF/Nba-2k23.jpg",
     "title": "NBA 2K23",
     "price": 20100,
     "status": "ofertas",
@@ -101,7 +101,7 @@
   {
     "id": 10,
     "stars": 4,
-    "image": "/images/cards/Gta-Trilogy-Definitive-Edition.jpg",
+    "image": "https://i.ibb.co/HjKWDQc/Gta-Trilogy-Definitive-Edition.jpg",
     "title": "GTA Trilogi",
     "price": 31600,
     "status": "preventa",
@@ -112,7 +112,7 @@
   {
     "id": 11,
     "stars": 5,
-    "image": "/images/cards/A-Way-Out.jpg",
+    "image": "https://i.ibb.co/VWr6H24n/A-Way-Out.jpg",
     "title": "A Way Out PS4",
     "price": 25400,
     "status": "ofertas",
@@ -123,7 +123,7 @@
   {
     "id": 12,
     "stars": 5,
-    "image": "/images/cards/Ace-Combat-8-Skies.jpg",
+    "image": "https://i.ibb.co/Z68t5zF4/Ace-Combat-8-Skies.jpg",
     "title": "Ace Combat 7: Skies Unknown",
     "price": 15500,
     "status": "masVendido",
@@ -134,7 +134,7 @@
   {
     "id": 13,
     "stars": 3,
-    "image": "/images/cards/Airport-Simulator-Day-Night-1.jpg",
+    "image": "https://i.ibb.co/0VQHDKG4/Airport-Simulator-Day-Night-1.jpg",
     "title": "Airport Simulator : Day & Night",
     "price": 9600,
     "status": "ofertas",
@@ -145,7 +145,7 @@
   {
     "id": 14,
     "stars": 3,
-    "image": "/images/cards/Alan-Wake-Remastered.jpg",
+    "image": "https://i.ibb.co/yckxMgTX/Alan-Wake-Remastered.jpg",
     "title": "Alan Wake: Remastered",
     "price": 12600,
     "status": "preventa",
@@ -156,7 +156,7 @@
   {
     "id": 15,
     "stars": 2,
-    "image": "/images/cards/Xbox-Series-6.png",
+    "image": "https://i.ibb.co/whd9tpKj/Xbox-Series-6.png",
     "title": "Alien: Isolation ",
     "price": 12000,
     "status": "preventa",
@@ -167,7 +167,7 @@
   {
     "id": 16,
     "stars": 1,
-    "image": "/images/cards/Xbox-Series-7.png",
+    "image": "https://i.ibb.co/RGzw1cxt/Xbox-Series-7.png",
     "title": "Anthem",
     "price": 17500,
     "status": "ofertas",
@@ -178,7 +178,7 @@
   {
     "id": 17,
     "stars": 5,
-    "image": "/images/cards/Ao-Internacional-Tennis.jpg",
+    "image": "https://i.ibb.co/Wv3xmsgQ/Ao-Internacional-Tennis.jpg",
     "title": "AO International Tennis",
     "price": 16600,
     "status": "ofertas",
@@ -189,7 +189,7 @@
   {
     "id": 18,
     "stars": 2,
-    "image": "/images/cards/Ark-Survival-Evolved.jpg",
+    "image": "https://i.ibb.co/gFP9QjLc/Ark-Survival-Evolved.jpg",
     "title": "Ark Survival Evolved",
     "price": 14400,
     "status": "ofertas",
@@ -200,7 +200,7 @@
   {
     "id": 19,
     "stars": 5,
-    "image": "/images/cards/Armored-Core-Vi.jpg",
+    "image": "https://i.ibb.co/6JD1Dds2/Armored-Core-Vi.jpg",
     "title": "Armored Core VI Fires of Rubicon PS4",
     "price": 41900,
     "status": "masVendido",
@@ -211,7 +211,7 @@
   {
     "id": 20,
     "stars": 4,
-    "image": "/images/cards/Assetto-Corsa.jpg",
+    "image": "https://i.ibb.co/8nP4DfMh/Assetto-Corsa.jpg",
     "title": "Assetto Corsa",
     "price": 9700,
     "status": "masVendido",
@@ -222,7 +222,7 @@
   {
     "id": 21,
     "stars": 5,
-    "image": "/images/cards/Battlefield-2042.jpg",
+    "image": "https://i.ibb.co/hRxd5h4y/Battlefield-2042.jpg",
     "title": "Battlefield 2042",
     "price": 11100,
     "status": "ofertas",
@@ -233,7 +233,7 @@
   {
     "id": 22,
     "stars": 4,
-    "image": "/images/cards/Battlefield-1.jpg",
+    "image": "https://i.ibb.co/gLbcQgR7/Battlefield-1.jpg",
     "title": "Battlefield 1",
     "price": 9700,
     "status": "ofertas",
@@ -244,7 +244,7 @@
   {
     "id": 23,
     "stars": 3,
-    "image": "/images/cards/Battlefield-4.jpg",
+    "image": "https://i.ibb.co/zVDtBFK6/Battlefield-4.jpg",
     "title": "Battlefield 4",
     "price": 17800,
     "status": "ofertas",
@@ -255,7 +255,7 @@
   {
     "id": 24,
     "stars": 5,
-    "image": "/images/cards/Battlefield-Hardline.jpg",
+    "image": "https://i.ibb.co/wrsrSn67/Battlefield-Hardline.jpg",
     "title": "Battlefield Hardline",
     "price": 6300,
     "status": "ofertas",
@@ -266,7 +266,7 @@
   {
     "id": 25,
     "stars": 2,
-    "image": "/images/cards/Zombie-Army-4.jpg",
+    "image": "https://i.ibb.co/zHZ67wJ2/Zombie-Army-4.jpg",
     "title": "Zombie Army 4: Dead War",
     "price": 34800,
     "status": "masVendido",
@@ -277,7 +277,7 @@
   {
     "id": 26,
     "stars": 4,
-    "image": "/images/cards/Wrc-Generations-1.png",
+    "image": "https://i.ibb.co/MDm1qG5x/Wrc-Generations-1.png",
     "title": "WRC Generations PS4",
     "price": 29900,
     "status": "ofertas",
@@ -288,7 +288,7 @@
   {
     "id": 27,
     "stars": 5,
-    "image": "/images/cards/Vampyr.jpg",
+    "image": "https://i.ibb.co/7N2fRSW1/Vampyr.jpg",
     "title": "Vampyr",
     "price": 11300,
     "status": "ofertas",
@@ -299,7 +299,7 @@
   {
     "id": 28,
     "stars": 3,
-    "image": "/images/cards/Unravel.jpg",
+    "image": "https://i.ibb.co/HfR5yn29/Unravel.jpg",
     "title": "Unravel Pack 1+2",
     "price": 13400,
     "status": "masVendido",
@@ -310,7 +310,7 @@
   {
     "id": 29,
     "stars": 5,
-    "image": "/images/cards/Uncharted-4-Bundle.jpg",
+    "image": "https://i.ibb.co/7xtvTgh6/Uncharted-4-Bundle.jpg",
     "title": "Uncharted 4",
     "price": 15400,
     "status": "preventa",
@@ -321,7 +321,7 @@
   {
     "id": 30,
     "stars": 4,
-    "image": "/images/cards/Ufc-4-1.jpg",
+    "image": "https://i.ibb.co/BHr3tvHr/Ufc-4-1.jpg",
     "title": "UFC 4",
     "price": 27400,
     "status": "ofertas",
@@ -332,7 +332,7 @@
   {
     "id": 31,
     "stars": 5,
-    "image": "/images/cards/Tony-Hawks-12.jpg",
+    "image": "https://i.ibb.co/h12Pvx09/Tony-Hawks-12.jpg",
     "title": "Tony Hawks Pro Skater 1 y 2",
     "price": 16400,
     "status": "preventa",
@@ -343,7 +343,7 @@
   {
     "id": 32,
     "stars": 5,
-    "image": "/images/cards/The-Division-2-Ps4.jpg",
+    "image": "https://i.ibb.co/GQKCNhh3/The-Division-2-Ps4.jpg",
     "title": "Tom Clancy´s The Division 2",
     "price": 15400,
     "status": "preventa",
@@ -354,7 +354,7 @@
   {
     "id": 33,
     "stars": 4,
-    "image": "/images/cards/Raimbow-Six-Siege.jpg",
+    "image": "https://i.ibb.co/kgb10NSb/Raimbow-Six-Siege.jpg",
     "title": "Tom Clancy´s Rainbows Six Siegue SUBS",
     "price": 16400,
     "status": "ofertas",
@@ -365,7 +365,7 @@
   {
     "id": 34,
     "stars": 5,
-    "image": "/images/cards/Rainbow-Six-Siege-Extraction.jpg",
+    "image": "https://i.ibb.co/9HxNcV4k/Rainbow-Six-Siege-Extraction.jpg",
     "title": "Tom Clancy´s Rainbows Six: Extraction",
     "price": 15400,
     "status": "ofertas",
@@ -377,7 +377,7 @@
   {
     "id": 35,
     "stars": 5,
-    "image": "/images/cards/Ghost-Recon-Breakpoint-Ps4.jpg",
+    "image": "https://i.ibb.co/XfCDncmt/Ghost-Recon-Breakpoint-Ps4.jpg",
     "title": "Tom Clancy´s Ghost Recon Breakpoint",
     "price": 45400,
     "status": "ofertas",
@@ -388,7 +388,7 @@
   {
     "id": 36,
     "stars": 3,
-    "image": "/images/cards/The-Witcher-3.jpg",
+    "image": "https://i.ibb.co/nM3s2S31/The-Witcher-3.jpg",
     "title": "The Witcher 3: Wild Hunt - Subtitulado",
     "price": 15400,
     "status": "preventa",
@@ -399,7 +399,7 @@
   {
     "id": 37,
     "stars": 3,
-    "image": "/images/cards/The-Texas-Massacre.jpg",
+    "image": "https://i.ibb.co/GQVnnXwK/The-Texas-Massacre.jpg",
     "title": "The Texas Saw Massacre",
     "price": 28400,
     "status": "ofertas",
@@ -410,7 +410,7 @@
   {
     "id": 38,
     "stars": 5,
-    "image": "/images/cards/The-Last-Of-Us-Remastered-1.jpg",
+    "image": "https://i.ibb.co/9HWyzfPq/The-Last-Of-Us-Remastered-1.jpg",
     "title": "The Last of us Remastered",
     "price": 19400,
     "status": "ofertas",
@@ -421,7 +421,7 @@
   {
     "id": 39,
     "stars": 5,
-    "image": "/images/cards/The-Last-Of-Us-Parte-2.jpg",
+    "image": "https://i.ibb.co/N2fPpngt/The-Last-Of-Us-Parte-2.jpg",
     "title": "The Last of us Parte 2",
     "price": 36400,
     "status": "preventa",
@@ -432,7 +432,7 @@
   {
     "id": 40,
     "stars": 4,
-    "image": "/images/cards/The-Hunter-Wild.jpg",
+    "image": "https://i.ibb.co/jZQtBmwS/The-Hunter-Wild.jpg",
     "title": "The Hunter: Call of the Wild",
     "price": 23400,
     "status": "ofertas",
@@ -443,7 +443,7 @@
   {
     "id": 41,
     "stars": 5,
-    "image": "/images/cards/Stray-1.jpg",
+    "image": "https://i.ibb.co/Lhk6FXJ1/Stray-1.jpg",
     "title": "Stray",
     "price": 22400,
     "status": "preventa",
@@ -454,7 +454,7 @@
   {
     "id": 42,
     "stars": 2,
-    "image": "/images/cards/Spiderman-Goty-1.jpg",
+    "image": "https://i.ibb.co/HLMc9YT6/Spiderman-Goty-1.jpg",
     "title": "Spider-Man: Game of The Year Español",
     "price": 23400,
     "status": "preventa",
@@ -465,7 +465,7 @@
   {
     "id": 43,
     "stars": 5,
-    "image": "/images/cards/Spiderman-Miles-Morales-1.jpg",
+    "image": "https://i.ibb.co/KcBC963C/Spiderman-Miles-Morales-1.jpg",
     "title": "Spider-Man: Miles Morales",
     "price": 23400,
     "status": "masVendido",
@@ -476,7 +476,7 @@
   {
     "id": 44,
     "stars": 3,
-    "image": "/images/cards/Sonic-Mania.jpg",
+    "image": "https://i.ibb.co/TqvYmrJx/Sonic-Mania.jpg",
     "title": "Sonic Mania",
     "price": 15400,
     "status": "masVendido",
@@ -487,7 +487,7 @@
   {
     "id": 45,
     "stars": 5,
-    "image": "/images/cards/Sonic-Origins.jpg",
+    "image": "https://i.ibb.co/rJQCZbb/Sonic-Origins.jpg",
     "title": "Sonic Origins",
     "price": 36400,
     "status": "preventa",
