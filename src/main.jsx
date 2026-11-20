@@ -5,11 +5,14 @@ import './index.css'
 import App from './App.jsx'
 import { CartProvider } from './context/CartContext.jsx'
 
+import { FormularioContainer } from './components/formularios/formularioContainer.jsx'
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       <CartProvider>
         <App />
+        <FormularioContainer />
       </CartProvider>
     </BrowserRouter>
   </StrictMode>,

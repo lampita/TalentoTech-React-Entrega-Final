@@ -1,32 +1,40 @@
 import { Spinner } from "../Spinner/Spinner";
 import { useState, useEffect } from "react";
 import styles from "./NosotrosList.module.css";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../firestore/config";
 
 function NosotrosList({ Mensaje, onCerrar }) {
   const [nosotros, setNosotros] = useState([]);
   const [error, setError] = useState(null);
   const [cargando, setCargando] = useState(true);
 
-  useEffect(() => {
-    const obtenerNosotros = async () => {
-      try {
-        const respuesta = await fetch("/data/nosotros.json");
+useEffect(() => {
+  const obtenerMiembros = async () => {
+    try {
+      const personasDB = collection(db, "nosotros");
+      const query = await getDocs(personasDB);
 
-        if (!respuesta.ok) {
-          throw new Error("No se pudo cargar la información del equipo");
-        }
-
-        const datos = await respuesta.json();
-        setNosotros(datos);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setCargando(false);
+      if (query.empty) {
+        throw new Error("No se encontraron miembros en la base de datos");
       }
-    };
 
-    obtenerNosotros();
-  }, []);
+      const listaMiembros = query.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+
+      setNosotros(listaMiembros);
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setCargando(false);
+    }
+  };
+
+  obtenerMiembros();
+}, []);
+
 
   if (cargando) {
     return <Spinner />;

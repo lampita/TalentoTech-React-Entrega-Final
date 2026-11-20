@@ -24,3 +24,4 @@ dist-ssr
 *.sw?
 firestore_upload/
 key_service_account.json
+*.env
