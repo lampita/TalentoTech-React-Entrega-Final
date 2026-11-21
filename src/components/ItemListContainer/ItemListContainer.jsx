@@ -6,7 +6,7 @@ import { IconoEstrellaVacia } from "../Icons/IconoEstrellaVacia";
 import { IconoEstrellaRellena } from "../Icons/IconoEstrellaRellena";
 import styles from "./ItemListContainer.module.css";
 
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, query, orderBy } from "firebase/firestore";
 import { db } from "../../firestore/config";
 
 export function ItemListContainer({ Mensaje }) {
@@ -24,32 +24,32 @@ export function ItemListContainer({ Mensaje }) {
 
   const { favoritos } = useCart();
 
-useEffect(() => {
-  const obtenerProductos = async () => {
-    try {
-      const productosDB = collection(db, "productos");
-      const query = await getDocs(productosDB);
+  useEffect(() => {
+    const obtenerProductos = async () => {
+      try {
+        const productosRef = collection(db, "productos");
+        const q = query(productosRef, orderBy("title", "asc"));
+        const snapshot = await getDocs(q);
 
-      if (query.empty) {
-        throw new Error("No se encontraron productos en la base de datos");
+        if (snapshot.empty) {
+          throw new Error("No se encontraron productos en la base de datos");
+        }
+
+        const listaProductos = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+
+        setProductos(listaProductos);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setCargando(false);
       }
+    };
 
-      const listaProductos = query.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-
-      setProductos(listaProductos);
-    } catch (error) {
-      setError(error.message);
-    } finally {
-      setCargando(false);
-    }
-  };
-
-  obtenerProductos();
-}, []);
-
+    obtenerProductos();
+  }, []);
 
   if (cargando) return <Spinner />;
   if (error) return <p>Error: {error}</p>;

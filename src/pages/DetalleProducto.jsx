@@ -20,15 +20,15 @@ useEffect(() => {
     setError(null);
 
     try {
-      const productoId = doc(db, "productos", id);
-      const query = await getDoc(productoId);
+      const productoRef  = doc(db, "productos", id);
+      const snapshot = await getDoc(productoRef  );
 
-      if (!query.exists()) {
+      if (!snapshot.exists()) {
         throw new Error("El juego solicitado no existe en nuestro catálogo");
       }
       setProducto({
-        ...query.data(),
-        id: query.id,
+        ...snapshot.data(),
+        id: snapshot.id,
       });
     } catch (err) {
       setError(err.message);
