@@ -6,11 +6,11 @@ const apiKey = import.meta.env.VITE_API_KEY_IMGBB;
 
 const estadoInicial = {
   id: "",
-  stars: "",
+  stars: 1,
   title: "",
-  price: "",
+  price: 0,
   status: "",
-  stock: "",
+  stock: 0,
   categoria: "",
   descripcion: "",
 };

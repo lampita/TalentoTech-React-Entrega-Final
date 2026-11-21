@@ -166,9 +166,9 @@ export function ItemListContainer({ Mensaje }) {
                 onChange={(e) => setStarsSel(e.target.value)}
               >
                 <option value="">Calificación</option>
-                <option value="5">⭐⭐⭐⭐⭐ (5 Estrellas)</option>
-                <option value="4">⭐⭐⭐⭐ (4 o más)</option>
-                <option value="3">⭐⭐⭐ (3 o más)</option>
+                <option value="5">⭐⭐⭐⭐⭐ 5 Estrellas</option>
+                <option value="4">⭐⭐⭐⭐ 4 o más</option>
+                <option value="3">⭐⭐⭐ 3 o más</option>
               </select>
             </div>
           </>
