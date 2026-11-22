@@ -6,14 +6,14 @@ import App from './App.jsx'
 import { CartProvider } from './context/CartContext.jsx'
 import Gestion from './components/Gestion/Gestion.jsx'
 
-import { FormularioContainer } from './components/formularios/FormularioContainer.jsx'
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       <CartProvider>
         <App />
-        <FormularioContainer />
+        
         <Gestion />
       </CartProvider>
     </BrowserRouter>
