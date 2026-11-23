@@ -5,6 +5,7 @@ import { Inicio } from "./pages/Inicio";
 import { DetalleProducto } from "./pages/DetalleProducto";
 import { CarritoPage } from "./pages/CarritoPage";
 import "./App.css";
+import Gestion from "./components/Gestion/Gestion";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         />
         <Route path="/producto/:id" element={<DetalleProducto />} />
         <Route path="/carrito" element={<CarritoPage />} />
+        <Route path="/gestion" element={<Gestion />} />
       </Route>
     </Routes>
   );

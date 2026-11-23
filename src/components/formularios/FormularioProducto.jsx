@@ -1,3 +1,5 @@
+import styles from "./FormularioProducto.module.css";
+
 export function FormularioProducto({
   datosForm,
   manejarCambio,
@@ -6,40 +8,53 @@ export function FormularioProducto({
   modoEdicion,
   cancelarEdicion,
 }) {
-  const formStyle = {
-    display: "flex",
-    flexDirection: "column",
-    maxWidth: "24rem",
-    margin: "3rem auto",
-    padding: "1.5rem",
-    border: "1px solid #ddd",
-    borderRadius: "8px",
-    gap: "16px",
-  };
-
   return (
-    <form style={formStyle} onSubmit={manejarEnvio}>
-      <h3>{modoEdicion ? "Editar Producto" : "Agregar Nuevo Producto"}</h3>
+    <form className={styles.formulario} onSubmit={manejarEnvio}>
+      <h3 className={styles.tituloForm}>
+        {modoEdicion ? "Editar Producto" : "Agregar Nuevo Producto"}
+      </h3>
 
-      <div>
-        <label htmlFor="id">Id: </label>
-        <input
-          id="id"
-          type="text"
-          name="id"
-          value={datosForm.id}
-          onChange={manejarCambio}
-          disabled={modoEdicion}
-          required
-        />
+      <div className={styles.filaDoble}>
+        <div className={styles.campo}>
+          <label htmlFor="id">ID</label>
+          <input
+            id="id"
+            type="text"
+            name="id"
+            value={datosForm.id}
+            onChange={manejarCambio}
+            disabled={modoEdicion}
+            required
+          />
+        </div>
+
+        <div className={styles.campo}>
+          <label htmlFor="stars">Puntuación</label>
+          <select
+            id="stars"
+            name="stars"
+            value={datosForm.stars}
+            onChange={manejarCambio}
+            required
+          >
+            <option value="" disabled>
+              Elegir
+            </option>
+            <option value={1}>⭐ (1)</option>
+            <option value={2}>⭐⭐ (2)</option>
+            <option value={3}>⭐⭐⭐ (3)</option>
+            <option value={4}>⭐⭐⭐⭐ (4)</option>
+            <option value={5}>⭐⭐⭐⭐⭐ (5)</option>
+          </select>
+        </div>
       </div>
 
-      <div>
-        <label htmlFor="title">Título: </label>
+      <div className={styles.campo}>
+        <label htmlFor="title">Título del Juego</label>
         <input
           id="title"
           type="text"
-          placeholder="GTA Saga"
+          placeholder="Ej: EA SPORTS FC 24 PS4"
           name="title"
           value={datosForm.title}
           onChange={manejarCambio}
@@ -47,9 +62,9 @@ export function FormularioProducto({
         />
       </div>
 
-      <div>
+      <div className={styles.campo}>
         <label htmlFor="image">
-          {modoEdicion ? "Cambiar carátula (opcional): " : "Carátula: "}
+          {modoEdicion ? "Cambiar carátula (opcional)" : "Carátula"}
         </label>
         <input
           id="image"
@@ -60,23 +75,22 @@ export function FormularioProducto({
           required={!modoEdicion}
         />
         {modoEdicion && datosForm.image && (
-          <div style={{ marginTop: "8px" }}>
-            <small>Carátula actual:</small>
-            <br />
+          <div className={styles.previewContainer}>
             <img
               src={datosForm.image}
               alt={datosForm.title}
-              style={{ width: "80px", borderRadius: "4px", marginTop: "4px" }}
+              className={styles.previewImg}
             />
+            <span className={styles.previewTexto}>Carátula actual cargada</span>
           </div>
         )}
       </div>
 
-      <div>
-        <label htmlFor="descripcion">Descripción: </label>
+      <div className={styles.campo}>
+        <label htmlFor="descripcion">Descripción</label>
         <textarea
           id="descripcion"
-          placeholder="Subir descripción original del juego"
+          placeholder="Descripción original del juego..."
           name="descripcion"
           rows={3}
           value={datosForm.descripcion}
@@ -85,99 +99,90 @@ export function FormularioProducto({
         />
       </div>
 
-      <div>
-        <label htmlFor="stars">Stars: </label>
-        <select
-          id="stars"
-          name="stars"
-          value={datosForm.stars}
-          onChange={manejarCambio}
-          required
-        >
-          <option value="" disabled>
-            Selecciona una puntuación
-          </option>
-          <option value={1}>⭐ (1)</option>
-          <option value={2}>⭐⭐ (2)</option>
-          <option value={3}>⭐⭐⭐ (3)</option>
-          <option value={4}>⭐⭐⭐⭐ (4)</option>
-          <option value={5}>⭐⭐⭐⭐⭐ (5)</option>
-        </select>
+      <div className={styles.filaDoble}>
+        <div className={styles.campo}>
+          <label htmlFor="categoria">Categoría</label>
+          <select
+            id="categoria"
+            name="categoria"
+            value={datosForm.categoria}
+            onChange={manejarCambio}
+            required
+          >
+            <option value="" disabled>
+              Seleccionar
+            </option>
+            <option value="deportes">Deportes</option>
+            <option value="guerra-shooter">Guerra / Shooter</option>
+            <option value="suspenso-terror">Suspenso / Terror</option>
+            <option value="accion-aventura">Acción / Aventura</option>
+            <option value="accion">Acción</option>
+            <option value="simulacion">Simulación</option>
+          </select>
+        </div>
+
+        <div className={styles.campo}>
+          <label htmlFor="status">Status (opcional)</label>
+          <select
+            id="status"
+            name="status"
+            value={datosForm.status}
+            onChange={manejarCambio}
+          >
+            <option value="">Ninguno</option>
+            <option value="masVendido">Más Vendido</option>
+            <option value="preventa">Preventa</option>
+            <option value="ofertas">Ofertas</option>
+          </select>
+        </div>
       </div>
 
-      <div>
-        <label htmlFor="status">Status (opcional): </label>
-        <select
-          id="status"
-          name="status"
-          value={datosForm.status}
-          onChange={manejarCambio}
-        >
-          <option value="">Ninguno</option>
-          <option value="masVendido">Más Vendido</option>
-          <option value="preventa">Preventa</option>
-          <option value="ofertas">Ofertas</option>
-        </select>
+      <div className={styles.filaDoble}>
+        <div className={styles.campo}>
+          <label htmlFor="price">Precio ($)</label>
+          <input
+            id="price"
+            type="number"
+            min={0}
+            step="0.01"
+            name="price"
+            value={datosForm.price}
+            onChange={manejarCambio}
+            required
+          />
+        </div>
+
+        <div className={styles.campo}>
+          <label htmlFor="stock">Stock</label>
+          <input
+            id="stock"
+            type="number"
+            min={0}
+            placeholder="0"
+            name="stock"
+            value={datosForm.stock}
+            onChange={manejarCambio}
+            required
+          />
+        </div>
       </div>
 
-      <div>
-        <label htmlFor="stock">Stock: </label>
-        <input
-          id="stock"
-          type="number"
-          min={0}
-          placeholder="Cantidad disponible"
-          name="stock"
-          value={datosForm.stock}
-          onChange={manejarCambio}
-          required
-        />
-      </div>
-
-      <div>
-        <label htmlFor="categoria">Categoría: </label>
-        <select
-          id="categoria"
-          name="categoria"
-          value={datosForm.categoria}
-          onChange={manejarCambio}
-          required
-        >
-          <option value="" disabled>
-            Selecciona una categoría
-          </option>
-          <option value="deportes">Deportes</option>
-          <option value="guerra-shooter">Guerra / Shooter</option>
-          <option value="suspenso-terror">Suspenso / Terror</option>
-          <option value="accion-aventura">Acción / Aventura</option>
-          <option value="accion">Acción</option>
-          <option value="simulacion">Simulación</option>
-        </select>
-      </div>
-
-      <div>
-        <label htmlFor="price">Precio ($): </label>
-        <input
-          id="price"
-          type="number"
-          min={0}
-          step="0.01"
-          name="price"
-          value={datosForm.price}
-          onChange={manejarCambio}
-          required
-        />
-      </div>
-
-      <button type="submit">
-        {modoEdicion ? "Actualizar Producto" : "Guardar Producto"}
-      </button>
-
-      {modoEdicion && (
-        <button type="button" onClick={cancelarEdicion}>
-          Cancelar Edición
+      <div className={styles.grupoBotones}>
+        <button type="submit" className={styles.btnSubmit}>
+          {modoEdicion ? "Actualizar Producto" : "Guardar Producto"}
         </button>
-      )}
+
+        {modoEdicion && (
+          <button
+            type="button"
+            onClick={cancelarEdicion}
+            className={styles.btnCancelar}
+          >
+            Cancelar Edición
+          </button>
+        )}
+      </div>
     </form>
   );
 }
+
