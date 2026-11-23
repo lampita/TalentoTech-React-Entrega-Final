@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { db } from "../../firestore/config";
-import { FormularioContainer } from "../formularios/FormularioContainer";
+import { FormularioContainer } from "../Formularios/FormularioContainer";
 import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
 import styles from "./Gestion.module.css";
 

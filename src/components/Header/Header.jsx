@@ -1,9 +1,12 @@
 import styles from "./Header.module.css";
 import { NavLink } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
+import { useAuth } from "../../context/AuthContext";
 
 export const Header = () => {
   const { totalItems } = useCart();
+  const { user, logout } = useAuth();
+
   return (
     <header className={styles.header}>
       <div className={styles.headerContainer}>
@@ -33,16 +36,43 @@ export const Header = () => {
                 Productos
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                to="/contacto"
-                className={`${styles.navLink} ${styles.disabled}`}
-              >
-                Contacto
-              </NavLink>
-            </li>
+
+            {user ? (
+              <>
+                {user.rol === "admin" && (
+                  <li>
+                    <NavLink
+                      to="/gestion"
+                      className={({ isActive }) =>
+                        `${styles.navLink} ${isActive ? styles.active : ""}`
+                      }
+                    >
+                      Gestión
+                    </NavLink>
+                  </li>
+                )}
+                <li>
+                  <span>¡Hola, {user.email}!</span>
+                </li>
+                <li>
+                  <button onClick={logout}>Cerrar Sesión</button>
+                </li>
+              </>
+            ) : (
+              <li>
+                <NavLink
+                  to="/login"
+                  className={({ isActive }) =>
+                    `${styles.navLink} ${isActive ? styles.active : ""}`
+                  }
+                >
+                  Login
+                </NavLink>
+              </li>
+            )}
           </ul>
         </nav>
+
         <NavLink to="/carrito" className={styles.cartWidget}>
           <span className={styles.cartIcon}>🛒</span>
           <span className={styles.cartBadge}>{totalItems}</span>
