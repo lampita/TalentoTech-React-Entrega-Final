@@ -2,8 +2,9 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  border-top: 3px solid var(--blue-playstation);
-  background-color: rgba(10, 15, 24, 0.85);
+  border-top: 3px solid var(--blue-playstation, #0070d1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background-color: rgba(10, 15, 24, 0.88);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 4px 30px rgba(0, 114, 206, 0.15);
@@ -12,76 +13,151 @@
 .headerContainer {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 30px 20px;
+  padding: 18px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 16px;
 }
 
 .logo {
   font-family: "Space Grotesk", sans-serif;
-  font-size: 2rem;
+  font-size: 1.85rem;
   font-weight: 700;
   letter-spacing: 1.5px;
+  color: var(--text-primary, #ffffff);
+  text-decoration: none;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 .logoAccent {
-  color: var(--blue-playstation);
+  color: var(--blue-playstation, #0070d1);
   text-shadow: 0 0 15px rgba(0, 114, 206, 0.6);
 }
 
 .navList {
   display: flex;
-  gap: 12px;
+  align-items: center;
+  gap: 8px;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .navLink {
   font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 500;
-  color: var(--text-muted);
+  color: var(--text-muted, #94a3b8);
   font-size: 0.95rem;
-  position: relative;
+  text-decoration: none;
   padding: 8px 16px;
   border-radius: 8px;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navLink:hover {
-  color: var(--text-primary);
-  background-color: rgba(0, 114, 206, 0.12); 
+  color: var(--text-primary, #ffffff);
+  background-color: rgba(0, 114, 206, 0.12);
 }
 
 .navLink.active {
-  color: var(--text-primary);
+  color: var(--text-primary, #ffffff);
   font-weight: 600;
-  background-color: rgba(0, 114, 206, 0.2);
+  background-color: rgba(0, 114, 206, 0.22);
 }
 
-.disabled {
-  pointer-events: none;
-  opacity: 0.4;
+.adminLink {
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  color: #38bdf8;
+}
+
+
+.accionesDerecha {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.btnLogin {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: rgb(0, 53, 97);
+  padding: 8px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btnLogin:hover {
+  background-color: #005bb5;
+  box-shadow: 0 0 14px rgba(0, 114, 206, 0.5);
+}
+
+
+.userBadge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 5px 6px 5px 12px;
+  border-radius: 999px;
+}
+
+.userEmail {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #e2e8f0;
+  max-width: 140px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btnLogout {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #fca5a5;
+  background-color: rgba(220, 38, 38, 0.15);
+  border: 1px solid rgba(220, 38, 38, 0.35);
+  padding: 5px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btnLogout:hover {
+  background-color: #dc2626;
+  color: #ffffff;
+  border-color: #dc2626;
 }
 
 .cartWidget {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   padding: 8px;
   border-radius: 50%;
+  text-decoration: none;
   transition: background-color 0.2s ease;
 }
 
 .cartWidget:hover {
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.07);
 }
 
 .cartBadge {
   position: absolute;
   top: 0px;
-  right: 0px;
-  background-color: rgb(178, 34, 34);
+  right: -2px;
+  background-color: #dc2626;
   color: white;
   font-size: 0.7rem;
   font-weight: 700;
@@ -89,4 +165,23 @@
   border-radius: 10px;
   font-family: "Space Grotesk", sans-serif;
   box-shadow: 0 0 8px rgba(0, 114, 206, 0.8);
+}
+
+
+@media (max-width: 768px) {
+  .headerContainer {
+    flex-wrap: wrap;
+    padding: 14px 16px;
+  }
+
+  .nav {
+    order: 3;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 10px;
+  }
+
+  .navList {
+    justify-content: center;
+  }
 }

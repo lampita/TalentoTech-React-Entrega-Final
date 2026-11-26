@@ -1,5 +1,5 @@
 import styles from "./Header.module.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
 import { useAuth } from "../../context/AuthContext";
 
@@ -10,9 +10,9 @@ export const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.headerContainer}>
-        <div className={styles.logo}>
+        <Link to="/" className={styles.logo}>
           PS4<span className={styles.logoAccent}>Store</span>
-        </div>
+        </Link>
 
         <nav className={styles.nav}>
           <ul className={styles.navList}>
@@ -37,46 +37,48 @@ export const Header = () => {
               </NavLink>
             </li>
 
-            {user ? (
-              <>
-                {user.rol === "admin" && (
-                  <li>
-                    <NavLink
-                      to="/gestion"
-                      className={({ isActive }) =>
-                        `${styles.navLink} ${isActive ? styles.active : ""}`
-                      }
-                    >
-                      Gestión
-                    </NavLink>
-                  </li>
-                )}
-                <li>
-                  <span>¡Hola, {user.email}!</span>
-                </li>
-                <li>
-                  <button onClick={logout}>Cerrar Sesión</button>
-                </li>
-              </>
-            ) : (
+            {user?.rol === "admin" && (
               <li>
                 <NavLink
-                  to="/login"
+                  to="/gestion"
                   className={({ isActive }) =>
-                    `${styles.navLink} ${isActive ? styles.active : ""}`
+                    `${styles.navLink} ${styles.adminLink} ${
+                      isActive ? styles.active : ""
+                    }`
                   }
                 >
-                  Login
+                  Gestión
                 </NavLink>
               </li>
             )}
           </ul>
         </nav>
 
-        <NavLink to="/carrito" className={styles.cartWidget}>
-          <span className={styles.cartIcon}>🛒</span>
-          <span className={styles.cartBadge}>{totalItems}</span>
-        </NavLink>
+        <div className={styles.accionesDerecha}>
+          {user ? (
+            <div className={styles.userBadge}>
+              <span className={styles.userEmail} title={user.email}>
+                👤 {user.email.split("@")[0]}
+              </span>
+              <button
+                type="button"
+                onClick={logout}
+                className={styles.btnLogout}
+              >
+                Salir
+              </button>
+            </div>
+          ) : (
+            <NavLink to="/login" className={styles.btnLogin}>
+              Login
+            </NavLink>
+          )}
+
+          <NavLink to="/carrito" className={styles.cartWidget}>
+            <span className={styles.cartIcon}>🛒</span>
+            <span className={styles.cartBadge}>{totalItems}</span>
+          </NavLink>
+        </div>
       </div>
     </header>
   );

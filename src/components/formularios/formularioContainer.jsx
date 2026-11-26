@@ -2,16 +2,17 @@ import { FormularioProducto } from "./FormularioProducto";
 import { useState, useEffect } from "react";
 import { db } from "../../firestore/config";
 import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
+import { Spinner } from "../Spinner/Spinner";
 
 const apiKey = import.meta.env.VITE_API_KEY_IMGBB;
 
 const estadoInicial = {
   id: "",
-  stars: 1,
+  stars: "",
   title: "",
-  price: 0,
+  price: "",
   status: "",
-  stock: 0,
+  stock: "",
   categoria: "",
   descripcion: "",
   image: "",
@@ -23,6 +24,8 @@ export function FormularioContainer({
   recargarProductos,
 }) {
   const [datosForm, setDatosForm] = useState(estadoInicial);
+  const [cargando, setCargando] = useState(false);
+
   const [imagenFile, setImagenFile] = useState(null);
 
   const modoEdicion = Boolean(productoAEditar);
@@ -57,12 +60,16 @@ export function FormularioContainer({
   const subirImagenImgbb = async (archivo) => {
     const formData = new FormData();
     formData.append("image", archivo);
-    const respuesta = await fetch(`https://api.imgbb.com/1/upload?key=${apiKey}`, {
-      method: "POST",
-      body: formData,
-    });
+    const respuesta = await fetch(
+      `https://api.imgbb.com/1/upload?key=${apiKey}`,
+      {
+        method: "POST",
+        body: formData,
+      },
+    );
     const datos = await respuesta.json();
-    if (!datos.success) throw new Error("La subida de la imagen a Imgbb falló.");
+    if (!datos.success)
+      throw new Error("La subida de la imagen a Imgbb falló.");
     return datos.data.url;
   };
 
@@ -79,12 +86,11 @@ export function FormularioContainer({
       alert("Por favor, selecciona una imagen para el producto.");
       return;
     }
-
+    setCargando(true);
     try {
       const productoRef = doc(db, "productos", idLimpio);
 
       if (modoEdicion) {
-
         let urlImagenFinal = datosForm.image;
 
         if (imagenFile) {
@@ -104,7 +110,6 @@ export function FormularioContainer({
         alert("¡Producto actualizado con éxito!");
         limpiarEdicion();
       } else {
-
         const docSnap = await getDoc(productoRef);
         if (docSnap.exists()) {
           alert(`El ID "${idLimpio}" ya está en uso. Elegí otro.`);
@@ -123,18 +128,37 @@ export function FormularioContainer({
         };
 
         await setDoc(productoRef, productoCompleto);
+
         alert("¡Producto agregado con éxito!");
       }
 
       setDatosForm(estadoInicial);
       setImagenFile(null);
       evento.target.reset();
-      recargarProductos(); 
+      recargarProductos();
     } catch (error) {
       console.error("Error en el proceso de envío:", error);
       alert("Hubo un error al guardar el producto.");
-    }
+    }finally {
+      
+      setCargando(false);}
   };
+if (cargando) {
+  return (
+    <div
+      style={{
+        
+        height: "100%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        boxSizing: "border-box",
+      }}
+    >
+      <Spinner />
+    </div>
+  );
+}
 
   return (
     <FormularioProducto

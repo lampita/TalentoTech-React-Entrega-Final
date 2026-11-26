@@ -4,12 +4,15 @@ import { ItemListContainer } from "./components/ItemListContainer/ItemListContai
 import { Inicio } from "./pages/Inicio";
 import { DetalleProducto } from "./pages/DetalleProducto";
 import { CarritoPage } from "./pages/CarritoPage";
+
+import GestionCupones from "./components/Cuponera/GestionCupones";
 import Gestion from "./components/Gestion/Gestion";
 import Registro from "./components/Registro/Registro";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import Login from "./components/login/Login";
 
 import "./App.css";
+
 
 function App() {
   return (
@@ -26,6 +29,10 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/registro" element={<Registro />} />
 
+
+        <Route path="/cupones/" element={<GestionCupones />} />
+        
+        
         <Route
           path="/gestion"
           element={

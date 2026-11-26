@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
+import styles from "./Auth.module.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -20,7 +21,6 @@ const Login = () => {
       await login(email, password);
       navigate("/");
     } catch (err) {
-      console.error("Error en el login:", err.code);
       if (
         err.code === "auth/invalid-credential" ||
         err.code === "auth/user-not-found" ||
@@ -36,34 +36,62 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <h2>Iniciar Sesión</h2>
-      <p>
-        ¿No tenés una cuenta? <Link to="/registro">Registrate aquí</Link>
-      </p>
+    <main className={styles.contenedorAuth}>
+      <div className={styles.tarjetaAuth}>
+        <div className={styles.marca}>
+          PS4<span className={styles.marcaAcento}>Store</span>
+        </div>
+        <h2 className={styles.titulo}>Iniciar Sesión</h2>
 
-      {error && <p style={{ color: "red" }}>{error}</p>}
+        {error && <div className={styles.alertaError}>{error}</div>}
 
-      <form onSubmit={handleLogin}>
-        <input
-          type="email"
-          placeholder="Correo electrónico"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Contraseña"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <button type="submit" disabled={cargando}>
-          {cargando ? "Ingresando..." : "Ingresar"}
-        </button>
-      </form>
-    </div>
+        <form onSubmit={handleLogin} className={styles.formulario}>
+          <div className={styles.campo}>
+            <label htmlFor="email">Correo electrónico</label>
+            <input
+              id="email"
+              type="email"
+              placeholder="tu@email.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+
+          <div className={styles.campo}>
+            <label htmlFor="password">Contraseña</label>
+            <input
+              id="password"
+              type="password"
+              placeholder="••••••••"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+
+          <button
+            type="submit"
+            disabled={cargando}
+            className={styles.btnPrincipal}
+          >
+            {cargando ? "Ingresando..." : "Ingresar"}
+          </button>
+        </form>
+
+        <div className={styles.pieEnlaces}>
+          <span>
+            ¿No tenés una cuenta?{" "}
+            <Link to="/registro" className={styles.enlace}>
+              Registrate aquí
+            </Link>
+          </span>
+          <Link to="/" className={styles.enlaceVolver}>
+            ← Volver a la tienda
+          </Link>
+        </div>
+      </div>
+    </main>
   );
 };
 
