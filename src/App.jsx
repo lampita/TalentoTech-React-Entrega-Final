@@ -13,7 +13,6 @@ import Login from "./components/login/Login";
 
 import "./App.css";
 
-
 function App() {
   return (
     <Routes>
@@ -29,15 +28,19 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/registro" element={<Registro />} />
 
-
-        <Route path="/cupones/" element={<GestionCupones />} />
-        
-        
         <Route
           path="/gestion"
           element={
             <ProtectedRoute rolesPermitidos={["admin"]}>
               <Gestion />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/cupones"
+          element={
+            <ProtectedRoute rolesPermitidos={["admin"]}>
+              <GestionCupones />
             </ProtectedRoute>
           }
         />

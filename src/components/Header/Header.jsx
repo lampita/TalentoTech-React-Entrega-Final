@@ -38,18 +38,33 @@ export const Header = () => {
             </li>
 
             {user?.rol === "admin" && (
-              <li>
-                <NavLink
-                  to="/gestion"
-                  className={({ isActive }) =>
-                    `${styles.navLink} ${styles.adminLink} ${
-                      isActive ? styles.active : ""
-                    }`
-                  }
-                >
-                  Gestión
-                </NavLink>
-              </li>
+              <>
+                {" "}
+                <li>
+                  <NavLink
+                    to="/gestion"
+                    className={({ isActive }) =>
+                      `${styles.navLink} ${styles.adminLink} ${
+                        isActive ? styles.active : ""
+                      }`
+                    }
+                  >
+                    Stock
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/cupones"
+                    className={({ isActive }) =>
+                      `${styles.navLink} ${styles.adminLink} ${
+                        isActive ? styles.active : ""
+                      }`
+                    }
+                  >
+                    Cupones
+                  </NavLink>
+                </li>
+              </>
             )}
           </ul>
         </nav>
