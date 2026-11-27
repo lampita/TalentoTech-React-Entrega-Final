@@ -2,7 +2,7 @@ import { FormularioProducto } from "./FormularioProducto";
 import { useState, useEffect } from "react";
 import { db } from "../../firestore/config";
 import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
-import { Spinner } from "../Spinner/Spinner";
+import { Spinner } from "../spinner/Spinner";
 
 const apiKey = import.meta.env.VITE_API_KEY_IMGBB;
 

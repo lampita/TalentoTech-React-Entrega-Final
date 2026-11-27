@@ -3,7 +3,7 @@ import { db } from "../../firestore/config";
 import { FormularioContainerCupones } from "./FormularioContainerCupones";
 import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
 import styles from "./GestionCupones.module.css";
-import { Cupon } from "../Cupon/Cupon";
+import { Cupon } from "../cupon/Cupon";
 
 const GestionCupones = () => {
   const [cupones, setCupones] = useState([]);

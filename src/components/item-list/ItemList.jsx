@@ -1,5 +1,5 @@
 import styles from "./ItemList.module.css";
-import { Item } from "../Item/Item";
+import { Item } from "../item/Item";
 export function ItemList({ productos }) {
   return (
     <>

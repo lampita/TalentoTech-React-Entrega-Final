@@ -1,10 +1,10 @@
 import { useCart } from "../context/CartContext";
 import { useNavigate } from "react-router-dom";
 import marioImg from "../assets/images/cart/mariokart.webp";
-import { BotonTriangulo } from "../components/BotonesMando/BotonTriangulo";
-import { BotonEquis } from "../components/BotonesMando/BotonEquis";
-import { BotonCuadrado } from "../components/BotonesMando/BotonCuadrado";
-import { BotonCirculo } from "../components/BotonesMando/BotonCirculo";
+import { BotonTriangulo } from "../components/botones-mando/BotonTriangulo";
+import { BotonEquis } from "../components/botones-mando/BotonEquis";
+import { BotonCuadrado } from "../components/botones-mando/BotonCuadrado";
+import { BotonCirculo } from "../components/botones-mando/BotonCirculo";
 import { Tooltip } from "react-tooltip";
 import styles from "./CarritoPage.module.css";
 

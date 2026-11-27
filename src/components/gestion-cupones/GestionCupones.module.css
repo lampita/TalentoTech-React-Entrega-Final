@@ -1,7 +1,8 @@
 .contenedorPrincipal {
   max-width: 1400px;
+  height: 74vw;
   margin: 0 auto;
-  padding: 2rem 1.5rem;
+  padding: 0rem 1.5rem;
   color: #f3f4f6;
   font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
@@ -28,7 +29,7 @@
   grid-template-columns: 380px 1fr;
   gap: 2rem;
   align-items: stretch;
-  height: 78vh;
+  height: 74vh;
 }
 
 .columnaFormulario {
@@ -86,8 +87,8 @@
 }
 
 .caratula {
-  width: 56px;
-  height: 72px;
+  width: 120px;
+  height: auto;
   object-fit: cover;
   border-radius: 4px;
   flex-shrink: 0;
@@ -119,7 +120,7 @@
 
 .tituloJuego {
   margin: 0;
-  font-size: 1rem;
+  font-size: 1.6rem;
   font-weight: 600;
   color: #ffffff;
   white-space: nowrap;
@@ -163,7 +164,7 @@
   flex-shrink: 0;
 }
 
-.btnEditar,
+
 .btnEliminar {
   padding: 0.45rem 0.85rem;
   border-radius: 5px;
@@ -174,16 +175,8 @@
   transition: all 0.2s ease;
 }
 
-.btnEditar {
-  background-color: transparent;
-  color: #38bdf8;
-  border: 1px solid #0070d1;
-}
 
-.btnEditar:hover {
-  background-color: #0070d1;
-  color: #ffffff;
-}
+
 
 .btnEliminar {
   background-color: transparent;

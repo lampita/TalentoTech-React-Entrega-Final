@@ -1,5 +1,5 @@
 import styles from "./FormularioCupones.module.css";
-import { Cupon } from "../Cupon/Cupon";
+import { Cupon } from "../cupon/Cupon";
 import { useState } from "react";
 
 export function FormularioCupones({ datosForm, manejarCambio, manejarEnvio }) {
@@ -10,11 +10,14 @@ export function FormularioCupones({ datosForm, manejarCambio, manejarEnvio }) {
   });
 
   const actualizarEstilo = (porcentaje) => {
+    if (porcentaje <=0) {
+      setEstiloPorMonto({ fondo: "#A9A9A9", texto: "#FFFFFF" });
+    }
     if (porcentaje >= 20) {
       setEstiloPorMonto({ fondo: "#D4AF37", texto: "#2C2208" });
     } else if (porcentaje >= 10) {
       setEstiloPorMonto({ fondo: "#FF4757", texto: "#FFFFFF" });
-    } else {
+    } else if (porcentaje > 0) {
       setEstiloPorMonto({ fondo: "#9C6F44", texto: "#FFFFFF" });
     }
   };
@@ -22,8 +25,8 @@ export function FormularioCupones({ datosForm, manejarCambio, manejarEnvio }) {
   const handleDescuento = (e) => {
     const nuevoValor = e.target.value;
     setPorcentaje(nuevoValor);
-    actualizarEstilo(nuevoValor);
     manejarCambio(e);
+    actualizarEstilo(nuevoValor);
   };
   const generarCodigoUnico = () => {
     return Date.now().toString(36).slice(-6).toUpperCase();
@@ -100,7 +103,7 @@ export function FormularioCupones({ datosForm, manejarCambio, manejarEnvio }) {
             id="descuento"
             type="number"
             min={0}
-            step="0.01"
+            step="0.1"
             name="descuento"
             value={datosForm.descuento}
             onChange={handleDescuento}

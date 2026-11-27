@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
-import { Header } from "../Header/Header";
-import Footer from "../Footer/Footer";
+import { Header } from "../header/Header";
+import Footer from "../footer/Footer";
 import styles from "./Layout.module.css";
 import marioImg from "../../assets/images/cart/mariokart.webp";
 

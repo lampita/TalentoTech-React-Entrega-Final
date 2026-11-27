@@ -65,11 +65,8 @@ export const Header = () => {
                   </NavLink>
                 </li>
               </>
-
-              
-
             )}
-                        {user?.rol === "admin" && (
+            {user?.rol === "admin" && (
               <>
                 {" "}
                 <li>
@@ -84,11 +81,7 @@ export const Header = () => {
                     Stock
                   </NavLink>
                 </li>
-
               </>
-
-              
-
             )}
           </ul>
         </nav>

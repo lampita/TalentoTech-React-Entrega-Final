@@ -1,9 +1,9 @@
-import { ItemList } from "../ItemList/Itemlist";
-import { Spinner } from "../Spinner/Spinner";
+import { ItemList } from "../item-list/Itemlist";
+import { Spinner } from "../spinner/Spinner";
 import { useState, useEffect } from "react";
 import { useCart } from "../../context/CartContext";
-import { IconoEstrellaVacia } from "../Icons/IconoEstrellaVacia";
-import { IconoEstrellaRellena } from "../Icons/IconoEstrellaRellena";
+import { IconoEstrellaVacia } from "../icons/IconoEstrellaVacia";
+import { IconoEstrellaRellena } from "../icons/IconoEstrellaRellena";
 import styles from "./ItemListContainer.module.css";
 
 import { collection, getDocs, query, orderBy } from "firebase/firestore";

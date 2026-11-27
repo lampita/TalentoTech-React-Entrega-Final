@@ -1,4 +1,4 @@
-import { Spinner } from "../Spinner/Spinner";
+import { Spinner } from "../spinner/Spinner";
 import { useState, useEffect } from "react";
 import styles from "./NosotrosList.module.css";
 import { collection, getDocs } from "firebase/firestore";

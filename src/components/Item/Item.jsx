@@ -1,25 +1,23 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useCart } from "../../context/CartContext"; 
-import { IconoEstrellaVacia } from "../Icons/IconoEstrellaVacia";
-import { IconoEstrellaRellena } from "../Icons/IconoEstrellaRellena";
+import { useCart } from "../../context/CartContext";
+import { IconoEstrellaVacia } from "../icons/IconoEstrellaVacia";
+import { IconoEstrellaRellena } from "../icons/IconoEstrellaRellena";
 import styles from "./Item.module.css";
+
 
 export const Item = ({ game }) => {
   const { id, title, price, image } = game;
   const { addToCart, favoritos, toggleFavorito } = useCart();
 
-  
   const [isAdding, setIsAdding] = useState(false);
 
   const isFavorite = favoritos.includes(id);
 
-  
   const handleAddToCart = () => {
     setIsAdding(true);
     addToCart(game);
 
-    
     setTimeout(() => {
       setIsAdding(false);
     }, 800);
@@ -36,9 +34,12 @@ export const Item = ({ game }) => {
       <div className={styles.gameInfo}>
         <div className={styles.titleContainer}>
           <button
-            className={`${styles.favoriteBtn}`}
+            className={styles.favoriteBtn}
             onClick={() => toggleFavorito(id)}
-            title={isFavorite ? "Quitar de favoritos" : "Agregar a favoritos"}
+            data-tooltip-id="estrella-tooltip"
+            data-tooltip-content={
+              isFavorite ? "Quitar de favoritos" : "Agregar a favoritos"
+            }
           >
             {isFavorite ? (
               <IconoEstrellaRellena isActive={true} />
@@ -56,8 +57,7 @@ export const Item = ({ game }) => {
               $ {price ? price.toLocaleString("es-AR") : " N/D "}
             </span>
           </div>
-          
-    
+
           <button
             className={`${styles.addToCartBtn} ${isAdding ? styles.btnDisabled : ""}`}
             onClick={handleAddToCart}

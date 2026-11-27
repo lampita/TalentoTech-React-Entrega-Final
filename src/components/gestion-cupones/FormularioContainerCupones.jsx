@@ -2,7 +2,7 @@ import { FormularioCupones } from "./FormularioCupones";
 import { useState } from "react";
 import { db } from "../../firestore/config";
 import { doc, getDoc, setDoc } from "firebase/firestore";
-import { Spinner } from "../Spinner/Spinner";
+import { Spinner } from "../spinner/Spinner";
 
 const estadoInicial = {
   codigo: "",
