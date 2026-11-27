@@ -37,7 +37,7 @@ export const Header = () => {
               </NavLink>
             </li>
 
-            {user?.rol === "admin" && (
+            {user?.rol === "boss" && (
               <>
                 {" "}
                 <li>
@@ -65,6 +65,30 @@ export const Header = () => {
                   </NavLink>
                 </li>
               </>
+
+              
+
+            )}
+                        {user?.rol === "admin" && (
+              <>
+                {" "}
+                <li>
+                  <NavLink
+                    to="/gestion"
+                    className={({ isActive }) =>
+                      `${styles.navLink} ${styles.adminLink} ${
+                        isActive ? styles.active : ""
+                      }`
+                    }
+                  >
+                    Stock
+                  </NavLink>
+                </li>
+
+              </>
+
+              
+
             )}
           </ul>
         </nav>

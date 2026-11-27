@@ -8,7 +8,7 @@ import {
 } from "firebase/auth";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
 
-import "../firestore/config"; 
+import "../firestore/config";
 
 const auth = getAuth();
 const db = getFirestore();
@@ -25,6 +25,7 @@ export const useAuth = () => {
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [rol, setRol] = useState(null);
   const [loading, setLoading] = useState(true);
 
   const signup = (email, password) => {
@@ -46,17 +47,18 @@ export const AuthProvider = ({ children }) => {
           const userDocRef = doc(db, "usuarios", currentUser.uid);
           const userDocSnap = await getDoc(userDocRef);
 
-          if (userDocSnap.exists() && userDocSnap.data().rol === "admin") {
-            setUser({ ...currentUser, rol: "admin" });
-          } else {
-            setUser({ ...currentUser, rol: "user" });
-          }
+          const userRol = userDocSnap.exists() ? userDocSnap.data().rol : "user";
+
+          setRol(userRol);
+          setUser({ ...currentUser, rol: userRol });
         } catch (error) {
           console.error("Error al obtener el rol del usuario:", error);
+          setRol("user");
           setUser({ ...currentUser, rol: "user" });
         }
       } else {
         setUser(null);
+        setRol(null);
       }
       setLoading(false);
     });
@@ -64,7 +66,7 @@ export const AuthProvider = ({ children }) => {
     return () => unsubscribe();
   }, []);
 
-  const value = { user, loading, login, signup, logout };
+  const value = { user, rol, loading, login, signup, logout };
 
   return (
     <AuthContext.Provider value={value}>
